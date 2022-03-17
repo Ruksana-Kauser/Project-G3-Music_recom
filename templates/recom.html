@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<div class="container">
+    <form action = '/rec'  method = "POST">
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label"><h3>Fav Music</h3></label>
+          <input type="text" class="form-control" name = "music_id" id="exampleInputEmail1" aria-describedby="emailHelp">
+          
+        </div>
+        
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+</div>
+
+{% if boom == 420 %}
+
+<div class="container">
+    <div class="alert alert-danger" role="alert">
+        Spelling mistake <a href="/list" class="alert-link">click here</a>. to Check
+      </div>
+</div>
+
+{% endif %}
+
+{% if boom == 100 %}
+
+<div class="container">
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Song Name</th>
+            <th scope="col">Genere</th>
+            <th scope="col">Rating</th>
+            <th scope="col">Popularity</th>
+            
+          </tr>
+        </thead>
+        <tbody>
+            {% for v in n %}
+          <tr>
+            <th scope="row">{{loop.index}}</th>
+            <td>{{v}}</td>
+            <td>{{g[loop.index - 1]}}</td>
+            <td>{{r[loop.index - 1]}}</td>
+            <td>{{p[loop.index - 1]}}</td>
+            
+          </tr>
+          {% endfor %}
+          
+        </tbody>
+      </table>
+</div>
+
+
+{% endif %}
+
+
+
+{% endblock body %}
+
+
+

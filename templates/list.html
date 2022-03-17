@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+
+{% block body %}
+<div class="container">
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Song Name</th>
+            <th scope="col">Genere</th>
+            
+          </tr>
+        </thead>
+        <tbody>
+            {% for v in a %}
+          <tr>
+            <th scope="row">{{loop.index}}</th>
+            <td>{{v}}</td>
+            <td>{{g[loop.index - 1]}}</td>
+            
+          </tr>
+          {% endfor %}
+          
+        </tbody>
+      </table>
+</div>
+
+{% endblock body %}
